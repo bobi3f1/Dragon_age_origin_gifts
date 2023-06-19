@@ -1,0 +1,57 @@
+#include <iostream>
+#include <map>
+#include <string>
+#include <list>
+
+using namespace std;
+
+int main() {
+    map<string,list<string>> Gifts;
+    list<string> Alistargf{"Alistair's Mother's Amulet","Black Runestone","Duncan's Shield","Joining Chalice","Onyx Demon Statuette","Small Carved Statuette","Stone Dragon Statuette","Stone Warrior Statuette","White Runestone"};
+    
+    list<string> Doggf{"Beef Bone","Found Cake","Lamb Bone","Large Bone","Ox Bone","Tangled Ball of Yarn","Veal Bone"};
+    
+    list<string> Lelianagf{"Andraste's Grace","Blue Satin Shoes","Bronze Symbol of Andraste","Chantry Amulet","Etched Silver Symbol","Golden Symbol of Andraste","Cute Nug","Silver Sword of Mercy","Steel Symbol of Andraste"};
+    
+    list<string> Morrigangf{"Black Grimoire","Flemeth's Grimoire","Gold Amulet","Golden Demon Pendant","Golden Mirror","Golden Rope Necklace","Locket","Silver Brooch","Silver Chain","Silver Medallion"};
+    
+    list<string> Oghrengf{"Ale","Alley King's Flagon","Chasind Sack Mead","Garbolg's Backcountry Reserve","Golden Scythe 4:90 Black","Legacy White Shear","Sun Blonde Vint-1","Wilhelm's Special Brew"};
+    
+    list<string> Shalegf {"Remarkable Amethyst","Remarkable Diamond","Remarkable Emerald","Remarkable Garnet","Remarkable Greenstone","Remarkable Malachite","Remarkable Ruby","Remarkable Sapphire","Remarkable Topaz"};
+    
+    list<string> Stengf {"Painting of the Rebel Queen","Portrait of a Goosegirl","Silver-Framed Still Life","Sten's Sword","Totem","Water-Stained Portrait"};
+    
+    list<string> Wynnegf{"Discovering Dragon's Blood: Potions, Tinctures, and Spicy Sauces","Fancy Scroll","Tattered Notebook","The Guerrins of Ferelden","The Rose of Orlais","The Search for the True Prophet","Wine"};
+    
+    list<string> Zevrangf{"Antivan Leather Boots","Dalish Gloves","Medium Gold Bar","Medium Silver Bar","Small Gold Bar","Small Silver Bar"};
+    
+    list<string> Secret_Companion_gf{"Botanist's Map of Thedas","Current Map of Ferelden","Ancient Map of the Imperium","Map of Occupied Ferelden","Map of the Anderfels"};
+    
+    
+    Gifts.insert(pair<string,list<string>>("Alistar",Alistargf));
+    Gifts.insert(pair<string,list<string>>("Dog",Doggf));
+    Gifts.insert(pair<string,list<string>>("Leliana",Lelianagf));
+    Gifts.insert(pair<string,list<string>>("Morrigan",Morrigangf));
+    Gifts.insert(pair<string,list<string>>("Oghren",Oghrengf));
+    Gifts.insert(pair<string,list<string>>("Shale",Shalegf));
+    Gifts.insert(pair<string,list<string>>("Sten",Stengf));
+    Gifts.insert(pair<string,list<string>>("Wynne",Wynnegf));
+    Gifts.insert(pair<string,list<string>>("Zevran",Zevrangf));
+    Gifts.insert(pair<string,list<string>>("Secret Companion",Secret_Companion_gf));
+    
+    
+    string characterName;
+    cout << "Character names: Alistar, Dog, Leliana, Morrigan, Oghren, Shale, Sten, Wynne, Zevran, Secret Companion\n";
+    cout << "Enter the name of a character: ";
+    getline(cin, characterName);
+    
+    for(auto pair:Gifts){
+        if(pair.first==characterName) {
+            cout<<<pair.first<<" : ";
+            for(auto att:pair.second){
+                cout<<att<<" \n";
+            }
+        }
+    }
+    return 0;
+}

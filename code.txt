@@ -2,6 +2,8 @@
 #include <map>
 #include <string>
 #include <list>
+//#include <algorithm>
+//#include <cctype>
 
 using namespace std;
 
@@ -45,13 +47,16 @@ int main() {
     cout << "Enter the name of a character: ";
     getline(cin, characterName);
     
+    //transform(characterName.begin(), characterName.end(), characterName.begin(),[](unsigned char c){ return std::tolower(c); });
+    
     for(auto pair:Gifts){
         if(pair.first==characterName) {
-            cout<<<pair.first<<" : ";
+            cout<<pair.first<<" : ";
             for(auto att:pair.second){
                 cout<<att<<" \n";
             }
         }
     }
+    
     return 0;
 }
